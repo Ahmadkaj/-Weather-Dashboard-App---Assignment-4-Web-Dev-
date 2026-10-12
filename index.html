@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Weather Dashboard</h1>
+
+    <form id="search-form" class="search">
+      <input id="city-input" type="text" placeholder="Enter a city, e.g. Beirut" aria-label="City name" />
+      <button id="search-btn" type="submit">Search</button>
+    </form>
+
+    <!-- loading and error messages -->
+    <!-- aria-live makes screen readers read the message when it changes -->
+    <div id="status" class="status" data-state="idle" aria-live="polite">
+      <div class="spinner"></div>
+      <p id="status-message"></p>
+    </div>
+
+    <!-- weather results -->
+    <section id="results" class="hidden">
+      <div class="card">
+        <div class="current-top">
+          <h2 id="city"></h2>
+          <span id="icon" class="icon"></span>
+        </div>
+        <p id="temp" class="temp"></p>
+        <p id="condition" class="condition"></p>
+
+        <div class="details">
+          <div class="detail">
+            <span class="label">Feels like</span>
+            <span id="feels" class="value"></span>
+          </div>
+          <div class="detail">
+            <span class="label">Humidity</span>
+            <span id="humidity" class="value"></span>
+          </div>
+          <div class="detail">
+            <span class="label">Wind</span>
+            <span id="wind" class="value"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

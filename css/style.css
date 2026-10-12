@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef3f9;
+  color: #1b2533;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* used by JavaScript to hide the results */
+.hidden {
+  display: none;
+}
+
+/* -search form  */
+.search {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.search input {
+  flex-grow: 1; 
+  padding: 12px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/*  loading and error messages */
+.status {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  color: #64748b;
+}
+
+.status p {
+  margin: 0;
+}
+
+/* hide the message box when the weather is shown */
+.status[data-state='success'] {
+  display: none;
+}
+
+/* red box for errors */
+.status[data-state='error'] {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+
+/* spinning circle, only visible while loading */
+.spinner {
+  display: none;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  border: 3px solid #cbd5e1;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.status[data-state='loading'] .spinner {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* weather card */
+.card {
+  background-color: white;
+  border: 1px solid #dbe3ee;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* city name on the left, icon on the right */
+.current-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-top h2 {
+  margin: 0;
+}
+
+.icon {
+  font-size: 48px;
+}
+
+.temp {
+  font-size: 64px;
+  font-weight: bold;
+  margin: 8px 0 0 0;
+}
+
+.condition {
+  font-size: 18px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+/* the three small boxes; they wrap to a new line on small screens */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail {
+  flex-grow: 1;
+  min-width: 140px;
+  margin: 0 12px 12px 0;
+  padding: 12px;
+  background-color: #eef3f9;
+  border-radius: 8px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* small screens (phones) */
+@media (max-width: 600px) {
+  .temp {
+    font-size: 48px;
+  }
+}
